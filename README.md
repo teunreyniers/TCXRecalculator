@@ -1,8 +1,15 @@
 # TCXRecalculator
 
-Python program to re-embed distance metrics into a TCX file, so you can keep valid
-distance, time, and heart rate statistics. The distance is recalculated using the 
-GPS coordinates 
+Python scripts to modify tcx files
+
+*Recalculate distance*
+Python script to re-embed distance metrics into a TCX file using the 
+GPS coordinates.
+
+*Set timings*
+Python program to set the timestamp for each trackpoint. You can specify the 
+total amound of seconds and starttime. The amound of time between two timestamps 
+will be set equal.
 
 ## Usage
 
@@ -11,10 +18,22 @@ Install de dependenties
 # pip install -r requirements.txt
 ```
 
-Run de file
+Recalculate distance 
 
 ```bash
-# python tcxrecalc.py input.tcx output.tcx
+# python tcx_recalc_dist.py input.tcx output.tcx
+```
+
+Set timings 
+
+```bash
+# python tcx_set_timings.py <input file> <output file> <starttime> <totalseconds>
+```
+
+Example:
+
+```bash
+# python tcx_set_timings.py input.tcx output.tcx "2019-08-22T15:00:05Z" 1910
 ```
 
 ## Dependencies
